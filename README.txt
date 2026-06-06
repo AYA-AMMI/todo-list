@@ -1,20 +1,23 @@
 # Todo List App — Full Stack
 
-A full-stack Todo List application built with **Express.js**, **React.js**, and **MongoDB**.
+A full-stack Todo List application built with **React.js**, **Express.js**, and **MongoDB**. The application allows users to create, update, complete, and delete tasks through a modern web interface.
 
 ---
 
-## Stack
+## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | React.js, Vite, CSS |
-| Backend | Node.js, Express.js |
-| Database | MongoDB, Mongoose |
-| DevOps | Docker, Docker Compose |
+| Layer    | Technology             |
+| -------- | ---------------------- |
+| Frontend | React.js, Vite, CSS    |
+| Backend  | Node.js, Express.js    |
+| Database | MongoDB, Mongoose      |
+| DevOps   | Docker, Docker Compose |
 
 ---
 
+## Project Structure
+
+```text
 todo-list-app/
 ├── backend/
 │   ├── models/
@@ -22,8 +25,8 @@ todo-list-app/
 │   ├── routes/
 │   │   └── taskRoutes.js
 │   ├── app.js
-│   ├── docker-compose.yml
 │   └── package.json
+│
 ├── frontend/
 │   ├── src/
 │   │   ├── TodoApp/
@@ -32,54 +35,84 @@ todo-list-app/
 │   │   ├── App.jsx
 │   │   └── main.jsx
 │   └── package.json
+│
+├── docker-compose.yml
 └── README.md
+```
 
 ---
 
-## API Routes
+## REST API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/tasks` | Get all tasks |
-| POST | `/tasks` | Create a new task |
-| PUT | `/tasks/:id` | Update a task |
-| DELETE | `/tasks/:id` | Delete a task |
+| Method | Endpoint     | Description             |
+| ------ | ------------ | ----------------------- |
+| GET    | `/tasks`     | Retrieve all tasks      |
+| POST   | `/tasks`     | Create a new task       |
+| PUT    | `/tasks/:id` | Update an existing task |
+| DELETE | `/tasks/:id` | Delete a task           |
 
 ---
 
 ## Getting Started
 
 ### Prerequisites
-- Node.js
-- Docker & Docker Compose
+
+* Node.js (v18 or later)
+* Docker & Docker Compose
+* MongoDB (or Dockerized MongoDB)
+
+---
 
 ### 1. Start MongoDB
+
 ```bash
-cd backend
 docker-compose up -d
 ```
 
-### 2. Start Backend
+---
+
+### 2. Start the Backend
+
 ```bash
 cd backend
 npm install
-npm run start
+npm start
 ```
-Server runs on **http://localhost:3000**
 
-### 3. Start Frontend
+Backend server runs at:
+
+```text
+http://localhost:3000
+```
+
+---
+
+### 3. Start the Frontend
+
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-App runs on **http://localhost:5173**
+
+Frontend application runs at:
+
+```text
+http://localhost:5173
+```
 
 ---
 
 ## Features
 
--  Add tasks with title and description
--  Mark tasks as completed
--  Delete tasks
--  Persistent storage with MongoDB
+* Create new tasks
+* Update existing tasks
+* Mark tasks as completed
+* Delete tasks
+* Store data persistently using MongoDB
+* RESTful API architecture
+* Responsive React user interface
+* Dockerized MongoDB environment
+
+
+---
